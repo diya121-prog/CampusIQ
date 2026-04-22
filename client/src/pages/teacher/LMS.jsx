@@ -11,7 +11,7 @@ const TYPE_COLORS = {
   link: 'bg-blue-50 text-blue-600',
 };
 
-const API_BASE = 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 export default function TeacherLMS() {
   const { toast } = useToast();

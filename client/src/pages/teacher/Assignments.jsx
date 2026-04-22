@@ -3,7 +3,7 @@ import { getAssignments, getSubmissions, gradeSubmission, createAssignment, dele
 import { useToast } from '../../components/shared/Toast';
 import { Plus, X, Eye, ChevronDown, ChevronUp, Award, Clock, CheckCircle, AlertCircle, Download } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 export default function TeacherAssignments() {
   const { toast } = useToast();

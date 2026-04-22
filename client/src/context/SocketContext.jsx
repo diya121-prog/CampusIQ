@@ -12,7 +12,8 @@ export function SocketProvider({ children }) {
 
   useEffect(() => {
     if (user) {
-      const s = io(window.location.origin, { withCredentials: true });
+      const socketUrl = import.meta.env.VITE_API_BASE || window.location.origin;
+      const s = io(socketUrl, { withCredentials: true });
       s.on('connect', () => {
         s.emit('join', user.id);
       });

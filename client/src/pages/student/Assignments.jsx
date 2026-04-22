@@ -5,7 +5,7 @@ import { getStudentMe } from '../../api/axios';
 import { Clock, CheckCircle, AlertTriangle, Upload, Eye, RefreshCw, FileText, X } from 'lucide-react';
 import { useToast } from '../../components/shared/Toast';
 
-const API_BASE = 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE || '';
 
 function SubmitModal({ assignment, studentId, onClose, onSuccess }) {
   const { toast } = useToast();

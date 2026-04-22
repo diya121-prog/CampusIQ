@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { getPdfs } from "../../api/axios";
 
 export default function ViewPDFs() {
     const [pdfs, setPdfs] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/pdfs")
+        getPdfs()
             .then(res => setPdfs(res.data))
             .catch(err => console.error(err));
     }, []);

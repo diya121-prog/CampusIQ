@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${import.meta.env.VITE_API_BASE || ''}/api`,
   withCredentials: true,
   headers: { 'Content-Type': 'application/json' },
 });
@@ -96,5 +96,8 @@ export const getClassrooms = () => api.get('/classrooms');
 export const createClassroom = (data) => api.post('/classrooms', data);
 export const updateClassroom = (id, data) => api.put(`/classrooms/${id}`, data);
 export const deleteClassroom = (id) => api.delete(`/classrooms/${id}`);
+
+// ── PDFs ──────────────────────────────────────────────────────────────
+export const getPdfs = () => api.get('/pdfs');
 
 export default api;
