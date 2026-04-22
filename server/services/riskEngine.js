@@ -1,6 +1,6 @@
 const pool = require('../db/pool');
 const path = require('path');
-const featureWeights = require(path.join(__dirname, '..', '..', 'Extra', 'feature_weights.json'));
+const featureWeights = require(path.join(__dirname, '..', 'Extra', 'feature_weights.json'));
 
 /**
  * CampusIQ Risk Engine v2
